@@ -12,13 +12,16 @@ export default function LogsList(): JSX.Element {
   useEffect(() => {
     dispatch(fetchLogs());
   }, []);
-
+console.log('logs', logs)
   return (
     <div>
       <div className="w-full px-4 py-2 rounded-lg shadow-md items-center justify-center gap-4 bg-gray-400 mx-auto mt-8">
         Logs List
-        {logs?.map((log: INotification) => (
-          <LogsItem notification={log} key={`${log.date}`}/>
+        {logs && logs?.map((log: INotification) => (
+          <LogsItem
+            notification={log}
+            key={`${log.date} ${log.email}${log.fromUserEmail}`}
+          />
         ))}
       </div>
     </div>

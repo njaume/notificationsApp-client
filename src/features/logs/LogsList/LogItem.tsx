@@ -32,7 +32,7 @@ export default function LogsItem({
       />
 
       <ItemLine label={"Message"} value={notification.message} />
-      <ItemLine label={"From User Email"} value={notification.fromUserEmail} />
+      <ItemLine label={"Email"} value={notification.fromUserEmail} />
       <ItemLine label={"Date"} value={notification.date.toLocaleString('en-US')} />
     </ul>
   );
